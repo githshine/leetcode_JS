@@ -51,3 +51,6 @@ var singleNumber = function (nums) {
 console.log(singleNumber([4, 1, 2, 1, 2]));
 console.log(singleNumber([2, 2, 1]));
 console.log(singleNumber([1]));
+
+// 参考答案中有一个很棒的解法： 使用 异或
+//                            可以消除掉同样的 number
