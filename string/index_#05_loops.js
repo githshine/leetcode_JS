@@ -13,8 +13,36 @@
  * @param {string} s
  * @return {string}
  */
+// time out !!
+var longestPalindrome_01 = function (s) {
+  function isPalindrome(arr) {
+    // let tmp = [...arr];
+    return arr.join('') === [...arr].reverse().join('');
+  }
 
-// 使用 two pointer 的算法思维进行解题
+  let i = 0,
+    j = 0;
+  let maxLen = 0;
+  let longestPalindrm = '';
+  let strArr = [];
+  while (i < s.length) {
+    strArr.push(s[j]);
+    if (isPalindrome(strArr) && j - i + 1 > maxLen) {
+      maxLen = j - i + 1;
+      longestPalindrm = strArr.join('');
+    }
+
+    if (j < s.length - 1) {
+      j++;
+    } else {
+      // j >= s.length
+      strArr = [];
+      i++;
+      j = i;
+    }
+  }
+  return longestPalindrm;
+};
 
 // 思路要点：
 
